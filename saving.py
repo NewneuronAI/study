@@ -1,0 +1,11 @@
+import numpy as np
+X_train1 = np.load('D:/s/Tensorflowspeechrecognition/X_train5b.npy')
+X_val1 = np.load('D:/s/Tensorflowspeechrecognition/X_val5b.npy')
+X_train2 = np.load('D:/s/Tensorflowspeechrecognition/X_train3b.npy')
+X_val2 = np.load('D:/s/Tensorflowspeechrecognition/X_val3b.npy')
+print(X_train1.shape)
+print(X_train2.shape)
+X_train = np.concatenate([X_train1,X_train2],axis=-1)
+X_val = np.concatenate([X_val1,X_val2],axis=-1)
+np.save('D:/s/Tensorflowspeechrecognition/X_train5b.npy',arr=X_train)
+np.save('D:/s/Tensorflowspeechrecognition/X_val5b.npy',arr=X_val)
